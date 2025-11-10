@@ -19,3 +19,15 @@ ul {
     display: flex;
     flex-direction: column-reverse;
 }
+
+image {
+    max-width: 100%;
+    height: auto;
+    place-items: bottom;
+}
+
+low-hp {
+    color: red;
+}
+    
+

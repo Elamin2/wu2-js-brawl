@@ -7,19 +7,29 @@ function rollDice() {
     return Math.ceil(Math.random() * 6)
 }
 
+const playButton = document.querySelector("#play-button")
 const playerHpElement = document.querySelector("#player-hp")
 const enemyHpElement = document.querySelector("#enemy-hp")
+
 const combatLogElement = document.querySelector("#combat-log")
 
-function log(msg) {
+function log(message, type) {
     const li = document.createElement("li")
-    li.textContent = msg
-    combatLogElement.appendChild(li)
-    if (combatLogElement.childNodes.length > 10) {
-        combatLogElement.removeChild(combatLogElement.firstChild)
+    if (type) {
+        li - classlist.add(type)
+        li.textContent = message
+        combatLogElement.appendChild(li)
+        if (combatLogElement.childNodes.length > 10) {
+            combatLogElement.removeChild(combatLogElement.firstChild)
+        }
     }
 }
 
+
+const Eenemy = {
+    "name": "Zio",
+    "hp": 40
+}
 function gameRound() {
     const playerRoll = rollDice()
     const enemyRoll = rollDice()
@@ -34,10 +44,18 @@ function gameRound() {
     } else {
         log("Snyggt parerat, inget händer!")
     }
-    playerHpElement.textContent = playerHp
-    enemyHpElement.textContent = enemyHp
+
+    if (playerHp < 1 || enemyHp < 1) {
+        playButton.disabled = true
+    } else if (playerHp < 30) [
+        playerHpElement.classList.add("low-hp")
+    ]
+
+    playerHpElement.textContent = playerHp < 1 ? 0 : playerHp
+    enemyHpElement.textContent = enemyHp < 1 ? 0 : enemyHp
 }
 playerHpElement.textContent = playerHp
 enemyHpElement.textContent = enemyHp
-const playButton = document.querySelector("#play-button")
 playButton.addEventListener("click", gameRound)
+
+log(`Spelet startar! Du möter fienden ${enemy.name}!`, "start")
