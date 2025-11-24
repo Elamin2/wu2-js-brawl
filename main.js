@@ -3,7 +3,7 @@ let playerHp = 100
 let enemyHp = 100
 
 function rollDice() {
-    return Math.ceil(Math.random() * 6)
+    return Math.ceil(Math.random() * 24)
 }
 
 const playButton = document.querySelector("#play-button")

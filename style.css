@@ -26,6 +26,12 @@ image {
     place-items: bottom;
 }
 
+dead.image {
+    max-width: 50%;
+    height: auto;
+    place-items: bottom;
+}
+
 low-hp {
     color: red;
 }
