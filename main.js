@@ -11,11 +11,11 @@ const playerHpElement = document.querySelector("#player-hp")
 const enemyHpElement = document.querySelector("#enemy-hp")
 const stopButton = document.querySelector("#stop-button")
 
-const resetButton = document.querySelector("#reset-button")
+const playerImageElement = document.querySelector("#player-image")
 
 const combatLogElement = document.querySelector("#combat-log")
 
- 
+
 
 function log(message, type) {
     const li = document.createElement("li")
@@ -35,6 +35,17 @@ function log(message, type) {
     }
 }
 
+function log(playerImageElement) {
+    if (playerHp < 1) {
+        playerImageElement.src = "images/player-dead.jng"
+    
+    } else if (playerHp > 30) {
+        playerImageElement.src = "images/player-gubbe.jng"
+    }
+
+}
+
+ 
 class Enemy {
     constructor(name, hp) {
         this.name = name
